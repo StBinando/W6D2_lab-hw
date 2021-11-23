@@ -38,11 +38,27 @@ Park.prototype.findBySpecies = function(species){
 
 
 Park.prototype.totalVisitorsDay = function(){
-    let totVisitors = 0;        // why doesn't work if not initialises as 0?!
+    let totVisitors = 0;        // why doesn't work if not initialises as 0?! NaN?!
     for (const dino of this.dinosaurs){ // why const for loop?!
         totVisitors += dino.guestsAttractedPerDay;
     }
     return totVisitors;
 }
+Park.prototype.totalVisitorsDay = function(){
+    let totVisitors = 0;        // why doesn't work if not initialises as 0?! NaN?!
+    for (const dino of this.dinosaurs){ // why const for loop?!
+        totVisitors += dino.guestsAttractedPerDay;
+    }
+    return totVisitors;
+}
+
+Park.prototype.totalVisitorsYear = function(){
+    // return (let totVisitors = this.totalVisitorsDay() * 365);
+    let totVisitors = this.totalVisitorsDay() * 365; 
+    return totVisitors;
+}
+
+
+
 
 module.exports = Park;
