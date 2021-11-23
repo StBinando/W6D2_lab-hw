@@ -15,8 +15,24 @@ Park.prototype.removeDino = function(){
 }
 
 Park.prototype.mostVisitors = function(){
-    return this.dinosaurs.guestsAttractedPerDay.max();
+    let mostVisited = this.dinosaurs[0];
+
+    for (const dino of this.dinosaurs){
+      if (dino.guestsAttractedPerDay > mostVisited.guestsAttractedPerDay) {
+        mostVisited = dino;
+      }
+    }
+
+    return mostVisited;
 }
 
-
+Park.prototype.findBySpecies = function(species){
+    foundDinos = [];
+    for (const dino of this.dinosaurs){
+        if (dino.species === species){
+            foundDinos.push(dino);
+        }
+    }
+    return foundDinos;
+}
 module.exports = Park;
