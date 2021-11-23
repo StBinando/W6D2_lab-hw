@@ -73,6 +73,18 @@ Park.prototype.removeBySpecies = function(species){
     }
 }
 
+Park.prototype.listByDiet = function(){
+    let listByDiet = {};
+    for (dino of this.dinosaurs){
+        if (listByDiet[dino.diet]){
+            listByDiet[dino.diet] +=1;
+        }
+        else {
+            listByDiet[dino.diet] = 1;
+        }
+    }
+    return listByDiet;
+}
 
 
 module.exports = Park;

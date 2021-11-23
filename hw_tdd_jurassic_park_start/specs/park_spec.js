@@ -90,4 +90,13 @@ describe('Park', function() {
     const actual = park.dinosaurs;
     assert.deepStrictEqual(actual, [dino2]);
   })
+  
+  it('should return number of dinosaurs by diet', function(){
+    park.addDino(dino1);
+    park.addDino(dino2);
+    park.addDino(dino3);
+    const actual = park.listByDiet();
+    assert.deepStrictEqual(actual, {'carnivore' : 3});  // carnivor or "carnivore" makes no difference?!
+
+  })
 });
