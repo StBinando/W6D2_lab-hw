@@ -15,7 +15,7 @@ Park.prototype.removeDino = function(){
 }
 
 Park.prototype.mostVisitors = function(){
-
+    return this.dinosaurs.guestsAttractedPerDay.max();
 }
 
 
