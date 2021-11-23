@@ -63,5 +63,16 @@ Park.prototype.revenueYear = function(){
     return revenue;
 }
 
+Park.prototype.removeBySpecies = function(species){
+    let dinosUpdated = [];
+    for (const dino of this.dinosaurs){
+        if (dino.species !== species){
+            dinosUpdated.push(dino);
+        }
+    this.dinosaurs = dinosUpdated;
+    }
+}
+
+
 
 module.exports = Park;
