@@ -70,9 +70,15 @@ describe('Park', function() {
     park.addDino(dino3);
     const actual = park.totalVisitorsYear();
     assert.strictEqual(actual, 76650);    
-
+    
   });
-
-  xit('should be able to calculate total revenue for one year');
+  
+  it('should be able to calculate total revenue for one year', function(){
+    park.addDino(dino1);
+    park.addDino(dino2);
+    park.addDino(dino3);
+    const actual = park.revenueYear();
+    assert.strictEqual(actual, 383250);  
+  });
 
 });

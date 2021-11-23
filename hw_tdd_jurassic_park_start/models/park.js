@@ -58,7 +58,10 @@ Park.prototype.totalVisitorsYear = function(){
     return totVisitors;
 }
 
-
+Park.prototype.revenueYear = function(){
+    let revenue = this.totalVisitorsYear() * this.price;
+    return revenue;
+}
 
 
 module.exports = Park;
