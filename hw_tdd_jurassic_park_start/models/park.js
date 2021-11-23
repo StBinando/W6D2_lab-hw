@@ -27,7 +27,7 @@ Park.prototype.mostVisitors = function(){
 }
 
 Park.prototype.findBySpecies = function(species){
-    foundDinos = [];
+    let foundDinos = [];
     for (const dino of this.dinosaurs){
         if (dino.species === species){
             foundDinos.push(dino);
@@ -35,4 +35,14 @@ Park.prototype.findBySpecies = function(species){
     }
     return foundDinos;
 }
+
+
+Park.prototype.totalVisitorsDay = function(){
+    let totVisitors = 0;        // why doesn't work if not initialises as 0?!
+    for (const dino of this.dinosaurs){ // why const for loop?!
+        totVisitors += dino.guestsAttractedPerDay;
+    }
+    return totVisitors;
+}
+
 module.exports = Park;

@@ -55,8 +55,14 @@ describe('Park', function() {
     const actual = park.findBySpecies("t-rex");
     assert.deepStrictEqual(actual, [dino1, dino3]);
   });
-
-  xit('should be able to calculate the total number of visitors per day');
+  
+  it('should be able to calculate the total number of visitors per day', function(){
+    park.addDino(dino1);
+    park.addDino(dino2);
+    park.addDino(dino3);
+    const actual = park.totalVisitorsDay();
+    assert.strictEqual(actual, 210);    
+  });
 
   xit('should be able to calculate the total number of visitors per year');
 
